@@ -1,23 +1,23 @@
-# Hello World (Rails minimale)
+# Hello World (Minimal Rails)
 
-Questa app Rails risponde "Hello World !" alla root (/).
+This Rails app responds with "Hello World !" at the root (/).
 
-## Avvio rapido
-1. Entra nella cartella del progetto:
+## Quick Start
+1. Enter the project directory:
    
    ```bash
    cd hello_world
    ```
-2. Installa le dipendenze gem:
+2. Install gem dependencies:
    
    ```bash
    bundle install
    ```
-3. Avvia il server di sviluppo:
+3. Start the development server:
    
    ```bash
    bundle exec rails server
    ```
-4. Apri il browser su http://localhost:3000
+4. Open your browser at http://localhost:3000
 
-Se l'installazione delle gem fallisce su Windows per estensioni native (ad es. libyaml/psych), usa WSL oppure installa MSYS2/DevKit tramite RubyInstaller e riprova `bundle install`.
+If gem installation fails on Windows due to native extensions (e.g., libyaml/psych), use WSL or install MSYS2/DevKit via RubyInstaller and try `bundle install` again.
