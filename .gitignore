@@ -1,0 +1,9 @@
+/log/
+/tmp/
+/.bundle/
+/vendor/
+/.byebug_history
+.DS_Store
+node_modules/
+
+
