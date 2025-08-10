@@ -1,0 +1,67 @@
+/* Base Reset and Theme */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  color: #1a1a1a;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+
+  /* Soft multi‑radial gradient (pastel orange/pink/blue) like ChatGPT landing */
+  background:
+    radial-gradient(40% 35% at 70% 25%, rgba(255, 189, 140, 0.8), transparent 60%),
+    radial-gradient(35% 30% at 30% 35%, rgba(255, 170, 200, 0.7), transparent 60%),
+    radial-gradient(45% 40% at 80% 80%, rgba(170, 205, 255, 0.7), transparent 60%),
+    linear-gradient(180deg, #fffdfb 0%, #f5f7ff 100%);
+  background-attachment: fixed;
+}
+
+/* Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(6px);
+  background: rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+}
+.navbar__inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+}
+.brand { font-weight: 700; color: #fff; letter-spacing: 0.5px; }
+
+/* Make main full‑width so the hero can fill the viewport */
+.app-container {
+  margin: 0;
+  padding: 0;
+  max-width: none;
+}
+
+/* Hero (centered greeting) */
+.hero {
+  min-height: calc(100vh - 64px); /* approx. minus navbar */
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 8vh 16px;
+}
+.hero__title {
+  margin: 0;
+  font-size: clamp(32px, 6vw, 64px);
+  font-weight: 700;
+  line-height: 1.1;
+  color: #1a1a1a;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+}
+
+/* Footer */
+.footer { margin-top: 40px; color: rgba(255,255,255,0.9); }
+.footer__inner { max-width: 960px; margin: 0 auto; padding: 16px 20px 32px; }
+
+

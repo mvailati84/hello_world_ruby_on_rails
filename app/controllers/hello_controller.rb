@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-class HelloController < ActionController::Base
-  GREETING = "Hello World - v2.0!"
+class HelloController < ApplicationController
+  GREETING = "Hello World - v3.0!"
 
   def index
     @message = GREETING
