@@ -3,6 +3,8 @@
 This Rails app responds with "Hello World !" at the root (/).
 
 ## Quick Start
+
+### Option 1: Local Development
 1. Enter the project directory:
    
    ```bash
@@ -21,3 +23,60 @@ This Rails app responds with "Hello World !" at the root (/).
 4. Open your browser at http://localhost:3000
 
 If gem installation fails on Windows due to native extensions (e.g., libyaml/psych), use WSL or install MSYS2/DevKit via RubyInstaller and try `bundle install` again.
+
+### Option 2: Docker (Recommended)
+
+#### Prerequisites
+- Docker installed on your system
+- Docker Compose (usually included with Docker Desktop)
+
+#### Running with Docker
+
+1. **Build and start the application:**
+   ```bash
+   docker-compose up --build
+   ```
+
+2. **Access the application:**
+   Open your browser at http://localhost:3000
+
+3. **Stop the application:**
+   ```bash
+   docker-compose down
+   ```
+
+#### Alternative Docker Commands
+
+- **Run in detached mode (background):**
+  ```bash
+  docker-compose up -d --build
+  ```
+
+- **View logs:**
+  ```bash
+  docker-compose logs -f
+  ```
+
+- **Rebuild without cache:**
+  ```bash
+  docker-compose build --no-cache
+  ```
+
+- **Run with custom port:**
+  ```bash
+  docker-compose up --build -p 8080:3000
+  ```
+
+#### Docker Image Details
+
+The application is containerized using:
+- **Base Image:** Ruby 3.2 Alpine (lightweight)
+- **Web Server:** Puma
+- **Port:** 3000
+- **Environment:** Production-ready configuration
+
+The Docker setup includes:
+- Multi-stage build for optimization
+- Health checks for container monitoring
+- Volume mounting for logs
+- Automatic restart policy
