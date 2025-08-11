@@ -1,0 +1,35 @@
+# Use the official Ruby image as base
+FROM ruby:3.2-alpine
+
+# Install system dependencies including yaml-dev for psych gem
+RUN apk add --no-cache \
+    build-base \
+    tzdata \
+    nodejs \
+    npm \
+    yaml-dev \
+    postgresql-dev \
+    sqlite-dev \
+    curl
+
+# Set working directory
+WORKDIR /app
+
+# Copy Gemfile and Gemfile.lock
+COPY Gemfile Gemfile.lock ./
+
+# Install Ruby gems
+RUN bundle install --jobs 4 --retry 3
+
+# Install foreman for process management
+RUN gem install foreman
+
+# Expose port 3000
+EXPOSE 3000
+
+# Set environment variables for development
+ENV RAILS_ENV=development
+ENV RAILS_SERVE_STATIC_FILES=true
+
+# Start the application with live reloading
+CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0"]

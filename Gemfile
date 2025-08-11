@@ -9,4 +9,12 @@ gem "puma", "~> 6.4"
 # Windows time zone data
 gem "tzinfo-data", platforms: [:mswin, :mingw, :x64_mingw, :jruby]
 
+# Development gems for live reloading
+group :development do
+  gem "spring"
+  gem "spring-watcher-listen"
+  gem "listen"
+  gem "web-console"
+end
+
 

@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    environment:
+      - RAILS_ENV=development
+      - RAILS_SERVE_STATIC_FILES=true
+    volumes:
+      # Mount the entire app directory for live reloading
+      - .:/app
+      # Exclude build artifacts to prevent conflicts
+      - /app/tmp
+      - /app/log
+    restart: unless-stopped
+    stdin_open: true
+    tty: true

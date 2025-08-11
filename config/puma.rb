@@ -7,7 +7,11 @@ threads min_threads_count, max_threads_count
 port ENV.fetch("PORT", 3000)
 environment ENV.fetch("RAILS_ENV", "development")
 workers ENV.fetch("WEB_CONCURRENCY", 0).to_i
-preload_app!
+
+# Only preload in production to allow live reloading in development
+if ENV.fetch("RAILS_ENV", "development") == "production"
+  preload_app!
+end
 
 plugin :tmp_restart
 
