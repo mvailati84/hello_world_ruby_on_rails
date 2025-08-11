@@ -1,4 +1,4 @@
-# Hello World (Minimal Rails)
+# Hello World with Ruby on Rails
 
 This Rails app responds with "Hello World !" at the root (/).
 
@@ -34,7 +34,7 @@ If gem installation fails on Windows due to native extensions (e.g., libyaml/psy
 
 1. **Build and start the application:**
    ```bash
-   docker-compose up --build
+   docker-compose up -d --build
    ```
 
 2. **Access the application:**
